@@ -510,9 +510,14 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label for="example-text-input" class="col-sm-2 col-form-label text-right">HR Status</label>
+                                                <label class="col-sm-2 col-form-label text-right">HR Status</label>
                                                 <div class="col-sm-10">
-                                                    <input class="form-control" type="text" value="Option2 Not Interested" id="example-text-input">
+                                                    <select class="form-control">
+                                                        <option>Option2 Not Interested</option>
+                                                        <option>Option2 Interested</option>
+                                                        <option>Option1 Not Interested</option>
+                                                        <option>Option1 Interested</option>
+                                                    </select>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
@@ -556,15 +561,38 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label for="example-search-input" class="col-sm-2 col-form-label text-right">Internship looking For</label>
+                                                <label class="col-sm-2 col-form-label text-right">Internship Looking For</label>
                                                 <div class="col-sm-10">
-                                                    <input class="form-control" type="search" value="React" id="example-search-input">
+                                                    <select class="form-control" id="other" onchange="showTextbox();">
+                                                        <option value="react">React</option>
+                                                        <option value="ui">UI</option>
+                                                        <option value="sales">Sales</option>
+                                                        <option value="angular">Angular</option>
+                                                        <option value="flutter">Flutter</option>
+                                                        <option value="marketing">Marketing</option>
+                                                        <option value="java">Java</option>
+                                                        <option value="python">Python</option>
+                                                        <option value="other">Other</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row" id="text-box" style="visibility: hidden;">
+                                                <label for="example-search-input" class="col-sm-2 col-form-label text-right">Other</label>
+                                                <div class="col-sm-10">
+                                                    <input class="form-control" type="search" id="example-search-input">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label for="example-search-input" class="col-sm-2 col-form-label text-right">Duration</label>
+                                                <label class="col-sm-2 col-form-label text-right">Duration</label>
                                                 <div class="col-sm-10">
-                                                    <input class="form-control" type="search" value="1 Month" id="example-search-input">
+                                                    <select class="form-control">
+                                                        <option>1 month</option>
+                                                        <option>2 month</option>
+                                                        <option>3 month</option>
+                                                        <option>4 month</option>
+                                                        <option>5 month</option>
+                                                        <option>6 month</option>
+                                                    </select>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
@@ -605,17 +633,7 @@
                                             <div class="repeater-default">
                                                 <div data-repeater-list="car">
                                                     <div data-repeater-item="">
-                                                        <div class="form-group row d-flex align-items-end">
-                                                            
-                                                            <!-- <div class="col-sm-4">
-                                                                <label class="control-label">Make</label>
-                                                                <select name="car[0][make]" class="form-control">
-                                                                    <option value="volkswagon" selected="">Volkswagon</option>
-                                                                    <option value="honda">Honda</option>
-                                                                    <option value="ford">Ford</option>
-                                                                </select>
-                                                            </div>end col -->
-                                                            
+                                                        <div class="form-group row d-flex align-items-end"> 
                                                             <div class="col-sm-4">
                                                                 <label class="control-label">Invalid Number sent email</label>
                                                                 <input type="text" name="car[0][model]" value="Lead - Test Tester - Add Note" class="form-control" style="outline: none; border: none;">
@@ -704,6 +722,19 @@
                 <span class="text-muted d-none d-sm-inline-block float-right">Crafted with <i class="mdi mdi-heart text-danger"></i> by Mannatthemes</span>
             </div>
         </footer>
+
+        <script>
+            function showTextbox(){
+                const other = document.getElementById("other");
+                const box = document.getElementById("text-box");
+                if(other.value=="other"){
+                    box.style.visibility = 'visible';
+                }
+                else{
+                    box.style.visibility = 'hidden';
+                }
+            }
+        </script>
 
         <!-- jQuery  -->
         <script src="assets/js/jquery.min.js"></script>
